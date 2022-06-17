@@ -5,6 +5,10 @@ import service.StringService
 
 class StringServiceImpl implements StringService {
 
+    /**
+     * @param inputLines
+     * print all upper case character in input lines
+     */
     @Override
     void printUppercaseChar(List<String> inputLines) {
         for (String line : inputLines) {
@@ -19,6 +23,11 @@ class StringServiceImpl implements StringService {
         println()
     }
 
+    /**
+     *
+     * @param inputLines
+     * print total character and total lower character of input lines
+     */
     @Override
     void printTotalChar(List<String> inputLines) {
         int lowerCharacterNumber = 0
@@ -36,6 +45,11 @@ class StringServiceImpl implements StringService {
         println "Total lower character: $lowerCharacterNumber"
     }
 
+    /**
+     *
+     * @param inputLines
+     * @param changeString - string which will be found in input lines and replace by new string
+     */
     @Override
     List<String> changeCharSequenceAndSave(List<String> inputLines, String changeString) {
         for (int index = 0; index < inputLines.size(); index++) {
@@ -46,6 +60,11 @@ class StringServiceImpl implements StringService {
         return inputLines
     }
 
+    /**
+     *
+     * @param inputLines
+     * @return lines list which cleaned (deleted all plenty space)
+     */
     @Override
     List<String> cleanStringAndSave(List<String> inputLines) {
         List<String> output = new ArrayList<>()
@@ -55,6 +74,11 @@ class StringServiceImpl implements StringService {
         return output
     }
 
+    /**
+     *
+     * @param inputLines
+     * @param appendString - string which be append in specify position
+     */
     @Override
     List<String> appendNewStringAndSave(List<String> inputLines, String appendString) {
         for (int index = 0; index < inputLines.size(); index++) {
