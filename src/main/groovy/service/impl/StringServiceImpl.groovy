@@ -1,17 +1,9 @@
 package service.impl
 
-import file.FileHandle
-import file.impl.FileHandleImpl
-import service.StringService
-import org.apache.commons.lang3.*
 
-import java.util.logging.Logger
+import service.StringService
 
 class StringServiceImpl implements StringService {
-
-    private final Logger logger = Logger.getLogger(FileHandleImpl.class.getName())
-
-    private final FileHandle fileHandle = new FileHandleImpl()
 
     @Override
     void printUppercaseChar(List<String> inputLines) {
@@ -45,7 +37,7 @@ class StringServiceImpl implements StringService {
     }
 
     @Override
-    List<String> changeCharSequenceAndSave(List<String> inputLines, String changeString){
+    List<String> changeCharSequenceAndSave(List<String> inputLines, String changeString) {
         for (int index = 0; index < inputLines.size(); index++) {
             if (inputLines.get(index).equals(changeString)) {
                 inputLines.set(index, changeString.toUpperCase())
@@ -55,7 +47,7 @@ class StringServiceImpl implements StringService {
     }
 
     @Override
-    List<String> cleanStringAndSave(List<String> inputLines){
+    List<String> cleanStringAndSave(List<String> inputLines) {
         List<String> output = new ArrayList<>()
         for (String line : inputLines) {
             output.add(line.trim().replaceAll("\\s+", " ")) //Delete all plenty space
@@ -64,7 +56,7 @@ class StringServiceImpl implements StringService {
     }
 
     @Override
-    List<String> appendNewStringAndSave(List<String> inputLines, String appendString){
+    List<String> appendNewStringAndSave(List<String> inputLines, String appendString) {
         for (int index = 0; index < inputLines.size(); index++) {
             if (inputLines.get(index).contains("\$")) {
                 int positionSpecifyChar = inputLines.get(index).indexOf("\$")

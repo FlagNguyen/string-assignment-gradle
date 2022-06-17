@@ -1,3 +1,4 @@
+import constant.Constant
 import file.FileHandle
 import file.impl.FileHandleImpl
 import service.StringService
@@ -7,13 +8,13 @@ import service.impl.StringServiceImpl
         final FileHandle fileHandle = new FileHandleImpl()
         final StringService stringService = new StringServiceImpl()
 
-        List<String> inputLines = fileHandle.readFile("/home/flag_nguyen/Documents/Eway_Training/string-assignment-gradle/src/main/groovy/inPut1.txt").get()
+        List<String> inputLines = fileHandle.readFile(Constant.INPUT_FILE_PATH).get()
         inputLines = stringService.cleanStringAndSave(inputLines)
         for (String line : inputLines) {
             println("$line")
         }
 
-        println("Ex1: ")
+        println("\nEx1: ")
         stringService.printUppercaseChar(inputLines)
 
         println("\nEx2: ")
